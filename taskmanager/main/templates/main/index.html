@@ -1,0 +1,19 @@
+{% extends 'main/base_html.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block ingredient %}
+    <h1>Active task's</h1>
+    {% if tasks %}
+        {% for el in tasks %}
+            <div class="alert alert-warning mt-2">
+                <h3>{{ el.title }}</h3>
+                <p>{{ el.task }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No task's</p>
+    {% endif %}
+{% endblock %}
